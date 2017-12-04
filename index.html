@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -20,12 +20,29 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<style type="text/css">
+			.reveal p {
+				text-align: left;
+			}
+			.reveal h4 h5 h6 {
+				text-align: left;
+				padding-left: 10em;
+			}
+			.reveal .centered {
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown="presentation.md"
+						 data-separator="^\r?\n---[ \t]*\r?\n\r?\n"
+						 data-separator-vertical="^\r?\nVVV[ \t]*\r?\n\r?\n"
+						 data-separator-notes="^Note:"
+						 data-charset="utf-8">
+				</section>
 			</div>
 		</div>
 
@@ -37,12 +54,39 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+                dependencies: [
+                    {src: 'plugin/markdown/marked.js'},
+                    {src: 'plugin/markdown/markdown.js'},
+                    {src: 'plugin/notes/notes.js', async: true},
+                    {
+                        src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                            hljs.initHighlightingOnLoad();
+                        }
+                    },
+                    { src: 'plugin/math/math.js', async: true }
+                ],
+
+				center: false, // vertical alignment
+
+                // Transition style
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow			});
+
+                // Options which are passed into marked
+                // See https://github.com/chjj/marked#options-1
+                markdown: {
+                    smartypants: true
+                }
+            });
+
+			Reveal.addEventListener("ready", function () {
+			   Reveal.getSlides().forEach(function (slide) {
+			       slide.querySelectorAll('.auto-fragment li').forEach(function (element) {
+			           element.className += ' fragment';
+				   });
+			   });
 			});
 		</script>
 	</body>
