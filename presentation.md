@@ -6,6 +6,11 @@
 Tal Einat -- taleinat
 </div>
 
+Note:
+- Not an intro to Cython
+- I'm not a Cython expert
+- Cython has tons of amazing features I won't mention
+
 ---
 
 ## What is Cython?
@@ -35,7 +40,7 @@ VVV
 ## What is it good for?
 
 - <!-- .element: class="fragment" --> Optimizations
-- <!-- .element: class="fragment" --> Usingf things available only in C
+- <!-- .element: class="fragment" --> Using things available only in C
   - OS functionality
   - Custom C code
   - 3rd party C libraries
@@ -79,8 +84,7 @@ Some options:
 
 VVV
 
-## Compilation? AAARGH!
-### Users
+## Compilation? AAARGH! -- Users
 
 - Binary wheels! `pip install` just works.
   - Automated generation: Still a PITA.
@@ -131,8 +135,8 @@ VVV
 ## The Levenshtein Distance
 
 <div style="text-align:center">
-![Levenshtein Distance Diagram](img/levenshtein1_1.png "Levenshtein Distance")
-![Levenshtein Distance Results](img/levenshtein1_2.png)
+![Levenshtein Distance Diagram](images/levenshtein1_1.png "Levenshtein Distance")
+![Levenshtein Distance Results](images/levenshtein1_2.png)
 </div>
 
 Note:
@@ -141,7 +145,7 @@ Note:
 VVV
 
 <div style="text-align:center">
-![Levenshtein Distance Diagram](img/levenshtein2.png "Levenshtein Distance")
+![Levenshtein Distance Diagram](images/levenshtein2.png "Levenshtein Distance")
 </div>
 
 ---
@@ -158,7 +162,7 @@ VVV
 ### Change #1: <br> Calculate only the relevant part of the grid
 
 <div style="text-align:center">
-![Levenshtein Distance Change #1](img/levenshtein1_1_change1.png "Levenshtein Distance Change #1")
+![Levenshtein Distance Change #1](images/levenshtein1_1_change1.png "Levenshtein Distance Change #1")
 </div>
 
 Note:
@@ -169,7 +173,7 @@ Note:
 ### Change #2: Stop calculating when the distance is too large
 
 <div style="text-align:center">
-![Levenshtein Distance Change #2](img/levenshtein1_1_change2.png "Levenshtein Distance Change #2")
+![Levenshtein Distance Change #2](images/levenshtein1_1_change2.png "Levenshtein Distance Change #2")
 </div>
 
 Note:
@@ -202,8 +206,8 @@ VVV
 ### Paths
 
 <div style="text-align:center">
-![Levenshtein Distance Paths #1](img/levenshtein1_1_paths1.png "Levenshtein Distance Paths #1")
-![Levenshtein Distance Paths #2](img/levenshtein1_1_paths2.png "Levenshtein Distance Paths #2")
+![Levenshtein Distance Paths #1](images/levenshtein1_1_paths1.png "Levenshtein Distance Paths #1")
+![Levenshtein Distance Paths #2](images/levenshtein1_1_paths2.png "Levenshtein Distance Paths #2")
 </div>
 
 Note:
@@ -215,8 +219,8 @@ VVV
 ### Backward vs. Forward Grid Cell Calculation
 
 <div style="text-align:center">
-![Levenshtein Distance Backward](img/levenshtein1_1_backward.png "Levenshtein Distance Backward")
-![Levenshtein Distance Forward](img/levenshtein1_1_forward.png "Levenshtein Distance Forward")
+![Levenshtein Distance Backward](images/levenshtein1_1_backward.png "Levenshtein Distance Backward")
+![Levenshtein Distance Forward](images/levenshtein1_1_forward.png "Levenshtein Distance Forward")
 </div>
 
 Note:
@@ -234,7 +238,7 @@ Note:
 Benchmarks:
 
 <div style="text-align:center">
-![Benchmark v0](img/benchmarks_0.png "Benchmarks v0")
+![Benchmark v0](images/benchmarks_0.png "Benchmarks v0")
 </div>
 
 <small>
@@ -253,6 +257,9 @@ Benchmarks:
 3.  Profile with a realistic workload.
 4.  Optimize the slowest part.
 5.  Repeat steps 3-4 as necessary.
+
+Note:
+- Cython is exceptionally great at this.
 
 ---
 
@@ -330,7 +337,7 @@ VVV
 -   A very different algorithm!
     -   Zooming way out to the highest level can be a great optimization strategy.
 -   Exact sub-string search is a much simpler problem
-    -   O(n·k) worst case; O(n) on reasonable inputs
+    -   O(n·k) worst case; O(n) or better on reasonable inputs
 -   Exact sub-string search is a *solved problem*
     -   `str.find()`
 
@@ -349,7 +356,7 @@ VVV
 ## Benchmarks
 
 <div style="text-align:center">
-![All Benchmarks](img/benchmarks_full.png "All Benchmarks")
+![All Benchmarks](images/benchmarks_full.png "All Benchmarks")
 </div>
 
 <small>
@@ -363,7 +370,7 @@ VVV
 ## Benchmarks
 
 <div style="text-align:center">
-![Relevant Benchmarks](img/benchmarks_relevant.png "Relevant Benchmarks")
+![Relevant Benchmarks](images/benchmarks_relevant.png "Relevant Benchmarks")
 </div>
 
 <div class="auto-fragment">
@@ -379,19 +386,17 @@ VVV
 ## Benchmarks -- N-grams Comparison
 
 <div style="text-align:center">
-![N-grams Benchmarks](img/benchmarks_ngrams.png "N-grams Benchmarks")
+![N-grams Benchmarks](images/benchmarks_ngrams.png "N-grams Benchmarks")
 </div>
 
 <small>
 \* _Results are in **micro**seconds._
 </small>
 
-<div class="auto-fragment">
 -   The "generic" Cython version is consistently faster
     -   up to 3x faster
 -   A non-"generic" Cython implementation could be even faster
 -   ... but at this point there was no need for further optimization!
-</div>
 
 VVV
 
@@ -399,7 +404,7 @@ VVV
 ### Cython "Generic" N-grams vs. Original
 
 <div style="text-align:center">
-![Final Results Benchmarks](img/benchmarks_final_results.png "Final Results Benchmarks")
+![Final Results Benchmarks](images/benchmarks_final_results.png "Final Results Benchmarks")
 </div>
 
 -   I had achieved an improvement of between 10x and 3,000x, depending on

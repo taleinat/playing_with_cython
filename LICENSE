@@ -1,4 +1,22 @@
-Copyright (C) 2017 Hakim El Hattab, http://hakim.se, and reveal.js contributors
+Copyright (C) 2017 Tal Einat
+
+This work is licensed under the Commons Attribution-NonCommercial-NoDerivatives
+4.0 International Public License. To view a copy of the license, visit:
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+If you are interested in commercial use of this work and/or in creating
+derivative works, contact Tal Einat at taleinat@gmail.com.
+
+
+The image images/levenshtein2.png is a screen-capture from the Wikipedia page
+https://en.wikipedia.org/wiki/Levenshtein_distance, captured by Tal Einat
+on December 4th 2017. In accordance with Wikipedia content licensing, it is
+therefore made available under the Creative Commons Attribution-ShareAlike 3.0
+Unported License.
+
+
+reveal.js is Copyright (C) 2017 Hakim El Hattab, http://hakim.se, and reveal.js
+contributors. It is licensed as follows:
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

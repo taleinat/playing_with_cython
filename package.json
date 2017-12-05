@@ -1,23 +1,15 @@
 {
-  "name": "reveal.js",
-  "version": "3.6.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://revealjs.com",
-  "subdomain": "revealjs",
-  "main": "js/reveal.js",
-  "scripts": {
-    "test": "grunt test",
-    "start": "grunt serve",
-    "build": "grunt"
-  },
+  "name": "playing_with_cython",
+  "version": "1.0.0",
+  "description": "Playing with Cython: A talk for PyWeb-IL #71, Dec. 2017",
+  "homepage": "https://taleinat.github.io/playing_with_cython/",
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Tal Einat",
+    "email": "taleinat@gmail.com",
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git://github.com/taleinat/playing_with_cython.git"
   },
   "engines": {
     "node": ">=4.0.0"

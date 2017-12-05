@@ -1,22 +1,22 @@
 {
-  "name": "reveal.js",
-  "version": "3.6.0",
+  "name": "playing_with_cython",
+  "version": "1.0.0",
   "main": [
     "js/reveal.js",
     "css/reveal.css"
   ],
-  "homepage": "http://revealjs.com",
-  "license": "MIT",
-  "description": "The HTML Presentation Framework",
+  "homepage": "https://taleinat.github.io/playing_with_cython/",
+  "license": "CC BY-NC-ND 4.0",
+  "description": "Playing with Cython: A talk for PyWeb-IL #71, Dec. 2017",
   "authors": [
-    "Hakim El Hattab <hakim.elhattab@gmail.com>"
+    "Tal Einat <taleinat@gmail.com>"
   ],
   "dependencies": {
     "headjs": "~1.0.3"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git://github.com/taleinat/playing_with_cython.git"
   },
   "ignore": [
     "**/.*",
