@@ -373,13 +373,11 @@ VVV
 ![Relevant Benchmarks](images/benchmarks_relevant.png "Relevant Benchmarks")
 </div>
 
-<div class="auto-fragment">
 -   The N-grams implementations are *much* faster than the rest
     -   1-3 orders of magnitude
 -   The "generic" LP implementation is 2x-4x times slower than the
     non-"generic" (Levenshtein distance only) version
 -   ... but the Cython "generic" implementation is 4x-10x *faster*
-</div>
 
 VVV
 
