@@ -5,11 +5,16 @@
   "homepage": "https://taleinat.github.io/playing_with_cython/",
   "author": {
     "name": "Tal Einat",
-    "email": "taleinat@gmail.com",
+    "email": "taleinat@gmail.com"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/taleinat/playing_with_cython.git"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "start": "grunt serve",
+    "build": "grunt"
   },
   "engines": {
     "node": ">=4.0.0"
